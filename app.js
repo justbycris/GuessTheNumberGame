@@ -3,6 +3,24 @@ let userGuesses = [];
 let attempts = 0;
 let maxGuesses;
 
+let low = 1
+let high = 100
+
+function updateRange() {
+    const lowValue = document.getElementById('low');
+    lowValue.style.flex = low + '%';
+    lowValue.style.background = "#ef7b54";
+
+    const space = document.getElementById('space');
+    lowValue.style.flec = high - low + "%";
+    lowValue.style.background = "#83e1d0";
+
+    const highValue = document.getElementById('high');
+    lowValue.style.flec = high + '%';
+    lowValue.style.background = "#ef7b54";
+
+}
+
 function gameEnded() {
     document.getElementById('newGameButton').style.display = "inline";
     document.getElementById('inputBox').setAttribute('readonly', 'readonly')
@@ -61,6 +79,7 @@ function compareGuess() {
             gameEnded();
         }
     }
+    updateRange();
 }
 
 function reloadPage() {
